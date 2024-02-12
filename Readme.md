@@ -1,0 +1,1 @@
+Some important demos from the BGJUG academy course about Java
