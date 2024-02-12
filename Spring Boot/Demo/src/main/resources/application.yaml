@@ -1,0 +1,24 @@
+demo:
+  env:
+    firstName: Pesho
+    lastName: Petrov
+#spring:
+#  profiles:
+#    active: ${MY_VAR:dev} #default is dev
+
+spring:
+  profiles:
+    group:
+      nonprod[0]: "dev"
+      nonprod[1]: "staging"
+
+
+
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+
+
