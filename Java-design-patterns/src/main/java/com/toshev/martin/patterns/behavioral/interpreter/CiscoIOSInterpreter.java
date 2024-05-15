@@ -27,7 +27,7 @@ public class CiscoIOSInterpreter {
 
 	public static void main(String[] args) {
 
-		String script = "configure terminal\\n" + "hostname machine.hostname.com";
+		String script = "configure terminal\n" + "hostname machine.hostname.com";
 
 		CiscoIOSInterpreter interpreter = new CiscoIOSInterpreter();
 		interpreter.execute(script);

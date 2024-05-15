@@ -23,7 +23,7 @@ public class DeviceController {
 	public static void main(String[] args) {
 		DeviceController controller = new DeviceController();
 		controller.addCommand("start", new StartCommand());
-		controller.addCommand("stop", new StartCommand());
+		controller.addCommand("stop", new StopCommand());
 		
 		CiscoRouter router = new CiscoRouter();
 		controller.execute(router, "start");

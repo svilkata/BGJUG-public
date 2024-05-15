@@ -3,8 +3,6 @@ package com.toshev.martin.patterns.behavioral.observer;
 import java.util.LinkedList;
 import java.util.List;
 
-import com.toshev.martin.patterns.behavioral.memento.DeviceSnapshot;
-
 public class Device {
 	
 	private List<Device> connectedDevices = new LinkedList<>();
@@ -37,11 +35,11 @@ public class Device {
 		connectedDevices.add(device);
 	}
 	
-	public void restart() {
+	public void restartTriggered() {
 		// restart current device ...
 		
 		for(Device connectedDevice : connectedDevices) {
-			connectedDevice.restart();
+			connectedDevice.restartTriggered();
 		}
 	}
 	
@@ -52,7 +50,7 @@ public class Device {
 		device.addConnectedDevice(switch1);
 		device.addConnectedDevice(switch2);
 		
-		device.restart();
+		device.restartTriggered();
 	}
 	
 }

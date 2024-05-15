@@ -9,6 +9,7 @@ public class MultilineCiscoIOSExpression extends CiscoIOSExpression {
 	}
 	
 	public void execute(CiscoIOSContext context) {
+		System.out.printf("Running %d expressions... \n", expressions.length);
 		for( CiscoIOSExpression expession : expressions) {
 			expession.execute(context);
 		}

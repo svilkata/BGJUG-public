@@ -6,7 +6,6 @@ import com.toshev.martin.patterns.structural.frontcontroller.JuniperRouter;
 
 public class DeviceController {
 
-	
 	public void startCiscoDevices(DeviceGroup deviceGroup) {
 	
 		DeviceGroupIterator iterator = new DeviceGroupIterator(deviceGroup);
@@ -14,11 +13,9 @@ public class DeviceController {
 		while (iterator.hasNext()) {
 			iterator.next().start();
 		}
-		
 	}
 
 	public static void main(String[] args) {
-		
 		DeviceGroup group = new DeviceGroup();
 		group.addDevice(new CiscoRouter());
 		group.addDevice(new JuniperRouter());
@@ -26,5 +23,4 @@ public class DeviceController {
 		DeviceController controller = new DeviceController();
 		controller.startCiscoDevices(group);
 	}
-	
 }
