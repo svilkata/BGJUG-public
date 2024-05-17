@@ -1,8 +1,9 @@
 package com.toshev.martin.patterns.behavioral.state;
 
-public abstract class StoppedDeviceState extends DeviceState {
+public class StoppedDeviceState extends DeviceState {
 
 	public void restart() {
+		System.out.println("Ignoring");
 		// ignore ...
 	}
 	

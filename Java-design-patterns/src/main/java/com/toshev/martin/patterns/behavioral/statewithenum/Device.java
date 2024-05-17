@@ -1,4 +1,6 @@
-package com.toshev.martin.patterns.behavioral.state;
+package com.toshev.martin.patterns.behavioral.statewithenum;
+
+
 
 public class Device {
 
@@ -8,7 +10,7 @@ public class Device {
 
 	private double price;
 
-	private DeviceState state;
+	private EnumDeviceState state;
 
 	public Device(String serialNumber, String shortName, double price) {
 		this.serialNumber = serialNumber;
@@ -28,11 +30,11 @@ public class Device {
 		return price;
 	}
 
-	public void setState(DeviceState state) {
+	public void setState(EnumDeviceState state) {
 		this.state = state;
 	}
 
-	public DeviceState getState() {
+	public EnumDeviceState getState() {
 		return state;
 	}
 
@@ -42,10 +44,10 @@ public class Device {
 
 	public static void main(String[] args) {
 		Device device = new Device("SN1", "device 1", 10.0);
-		device.setState(new StartingDeviceState());
+		device.setState(EnumDeviceState.STARTING);
 		device.restart();
 
-		device.setState(new StoppedDeviceState());
+		device.setState(EnumDeviceState.STOPPED);
 		device.restart();
 	}
 
