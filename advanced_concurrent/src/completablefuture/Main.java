@@ -29,22 +29,22 @@ public class Main {
 //        //can be completed prematurely with a result
 //        task1.complete(20);
 
-        CompletableFuture<Object> prev = null;
-        Supplier<Object> supplier = () -> {};
-
-        for (int i = 0; i < count; i++) {
-            CompletableFuture<Object> task;
-            if (prev != null) {
-                task = prev.thenCompose(x -> {
-                    return CompletableFuture.supplyAsync(supplier);
-                });
-            } else {
-                task = CompletableFuture.supplyAsync(supplier);
-            }
-
-            prev = task;
-        }
-
-        prev.get();
+//        CompletableFuture<Object> prev = null;
+//        Supplier<Object> supplier = () -> {};
+//
+//        for (int i = 0; i < count; i++) {
+//            CompletableFuture<Object> task;
+//            if (prev != null) {
+//                task = prev.thenCompose(x -> {
+//                    return CompletableFuture.supplyAsync(supplier);
+//                });
+//            } else {
+//                task = CompletableFuture.supplyAsync(supplier);
+//            }
+//
+//            prev = task;
+//        }
+//
+//        prev.get();
     }
 }

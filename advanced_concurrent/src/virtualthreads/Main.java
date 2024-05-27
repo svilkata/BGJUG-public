@@ -11,13 +11,17 @@ public class Main {
     }
 
     private static void createSimpleVirtualThread() throws InterruptedException {
-        Thread thread = Thread.ofVirtual().start(() -> {...});
+        Thread thread = Thread.ofVirtual().start(() -> {
+            System.out.println();
+        });
         thread.join();
     }
 
     private static void createVirtualThreadPool() throws InterruptedException, ExecutionException {
         ExecutorService virtualThreadPool = Executors.newVirtualThreadPerTaskExecutor();
-        Future<?> task = virtualThreadPool.submit(() -> {...});
+        Future<?> task = virtualThreadPool.submit(() -> {
+            System.out.println();
+        });
         task.get();
     }
 }
