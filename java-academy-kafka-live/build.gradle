@@ -1,0 +1,25 @@
+plugins {
+    id 'java'
+}
+
+group = 'org.example'
+version = '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation group: 'org.apache.kafka', name: 'kafka-clients', version: '3.6.1'
+    // SLF4J API
+    implementation 'org.slf4j:slf4j-api:1.7.32' // Use the latest version available
+
+    // Logback (SLF4J implementation)
+    implementation 'ch.qos.logback:logback-classic:1.2.6' // Use the latest version available
+    testImplementation platform('org.junit:junit-bom:5.9.1')
+    testImplementation 'org.junit.jupiter:junit-jupiter'
+}
+
+test {
+    useJUnitPlatform()
+}
